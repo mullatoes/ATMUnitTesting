@@ -31,7 +31,13 @@ public class AccountServiceRepository {
     }
 
     public void save(Account account) {
-         accountList.add(account);
+        Account byId = findById(account.getAccountNumber());
+        if (byId == null){
+            accountList.add(account);
+        }else {
+            System.out.println("You can't add an existing account!");
+        }
+
     }
 
     public void deleteById(String accountNumber) {

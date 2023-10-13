@@ -6,8 +6,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService {
 
-    @Autowired
+    @Autowired //@Bean @EJBBean
     private ProductService productService;
+
 
     public OrderService(ProductService service){
         this.productService = service;
